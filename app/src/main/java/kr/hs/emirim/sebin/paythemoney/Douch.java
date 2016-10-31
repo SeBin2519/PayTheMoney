@@ -8,13 +8,18 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 
 public class Douch extends AppCompatActivity implements View.OnClickListener{
+    int person,price;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.douch);
 
-        EditText person = (EditText) findViewById(R.id.edit_person);
+        EditText editPerson = (EditText) findViewById(R.id.edit_person);
+        EditText editPrice = (EditText) findViewById(R.id.edit_price);
+
+        person=Integer.parseInt(editPerson.toString());
+        price=Integer.parseInt(editPrice.toString());
     }
 
     @Override
