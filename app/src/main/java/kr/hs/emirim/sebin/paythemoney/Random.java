@@ -1,18 +1,17 @@
 package kr.hs.emirim.sebin.paythemoney;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class Random extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.random);
 
         ImageButton but_douch = (ImageButton) findViewById(R.id.but_douch);
         ImageButton but_mol = (ImageButton) findViewById(R.id.but_mol);
@@ -33,17 +32,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.but_douch:
-                Intent intent =new Intent(this,DouchEditPerson.class);
+                Intent intent =new Intent(this,Douch.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
                 break;
             case R.id.but_mol:
-                Intent intent1 =new Intent(this,MolEditPerson.class);
+                Intent intent1 =new Intent(this,Mol.class);
                 startActivity(intent1);
                 overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
                 break;
             case R.id.but_random:
-                Intent intent2 =new Intent(this,RandomEditPerson.class);
+                Intent intent2 =new Intent(this,Random.class);
                 startActivity(intent2);
                 overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
                 break;
