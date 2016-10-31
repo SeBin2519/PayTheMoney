@@ -6,9 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class Douch extends AppCompatActivity implements View.OnClickListener{
     int person,price;
+    int douchMoney;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,9 +20,20 @@ public class Douch extends AppCompatActivity implements View.OnClickListener{
 
         EditText editPerson = (EditText) findViewById(R.id.edit_person);
         EditText editPrice = (EditText) findViewById(R.id.edit_price);
+        TextView textresult=(TextView)findViewById(R.id.text_result);
 
         person=Integer.parseInt(editPerson.toString());
         price=Integer.parseInt(editPrice.toString());
+
+
+        if((douchMoney=price/person)==0) {///남은 돈이 없다면
+           // mImageView.setImageResource(R.drawable.);
+            Toast.makeText(this," 더치 페이 결과:"+douchMoney+"원을 내주세요~",Toast.LENGTH_LONG).show();
+            //TextView에 result설정
+            textresult.setText(" * 한 사람 당 "+douchMoney+"원을 내야합니다!");
+        }
+        else {
+        }
     }
 
     @Override
@@ -30,22 +44,6 @@ public class Douch extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.but_douch:
-                Intent intent =new Intent(this,Douch.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
-                break;
-            case R.id.but_mol:
-                Intent intent1 =new Intent(this,Mol.class);
-                startActivity(intent1);
-                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
-                break;
-            case R.id.but_random:
-                Intent intent2 =new Intent(this,Random.class);
-                startActivity(intent2);
-                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
-                break;
         }
     }
 }

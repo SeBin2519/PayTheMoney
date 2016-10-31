@@ -41,7 +41,8 @@
         android:id="@+id/view_flip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        >
 
         <ImageView
             android:src="@drawable/roulette1"
@@ -75,4 +76,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </ViewFlipper>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" "
+        android:id="@+id/text_result"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="24dp"
+        android:textColor="#9c1414"
+        android:textSize="30sp"
+        android:nestedScrollingEnabled="true" />
 </LinearLayout>
